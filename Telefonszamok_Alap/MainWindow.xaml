@@ -6,7 +6,73 @@
         xmlns:local="clr-namespace:Telefonszamok_Alap"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel>
+        <Menu>
+            <MenuItem x:Name="miFile" Header="File">
+                <MenuItem x:Name="miMentes" Header="Mentés" Click="miMentes_Click"/>
+                <Separator/>
+                <MenuItem x:Name="miKilepes" Header="Kilépés" Click="miKilepes_Click"/>
+            </MenuItem>
 
-    </Grid>
+            <MenuItem x:Name="miLekerdezes" Header="Lekérdezések">
+                <MenuItem x:Name="miMindenAdat" Header="Minden adat" Click="miMindenAdat_Click"/>
+                <MenuItem x:Name="miHelyisegek" Header="Helyiségek" Click="miHelyisegek_Click"/>
+            </MenuItem>
+
+            <MenuItem x:Name="miModosit" Header="Adat módosítása">
+                <MenuItem x:Name="miUjhelyiseg" Header="Új helyiség" Click="miUjhelyiseg_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <DataGrid x:Name="dgAdatracs" ItemsSource="{Binding}" Visibility="Hidden"
+                  VerticalGridLinesBrush="Transparent" HeadersVisibility="Column"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" MaxHeight="400"/>
+
+        <Grid x:Name="grAdatok" DataContext="{Binding}" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Keresés irányítószám alapján" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                   HorizontalAlignment="Left"/>
+            <ComboBox x:Name="cbIrsz" ItemsSource="{Binding}" DisplayMemberPath="IRSZ"
+                      Grid.Row="0" Grid.Column="3" Width="auto" HorizontalAlignment="Stretch"
+                      SelectionChanged="cbIrsz_SelectionChanged" IsSynchronizedWithCurrentItem="True"/>
+
+            <Label Content="Keresés helyiségnév alapján" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                   HorizontalAlignment="Left"/>
+            <ComboBox x:Name="cbHelyisegnev" ItemsSource="{Binding}" DisplayMemberPath="Nev"
+                      Grid.Row="2" Grid.Column="3" Width="auto" HorizontalAlignment="Stretch"
+                      SelectionChanged="cbHelyisegnev_SelectionChanged"  IsSynchronizedWithCurrentItem="True"/>
+
+            <Border Grid.Row="3" Grid.ColumnSpan="5" BorderBrush="Black" BorderThickness="0,0,0,1"/>
+
+            <Label Content="Irányítószám" Grid.Row="4" Grid.Column="1"/>
+            <TextBox x:Name="tbIrsz" Grid.Row="4" Grid.Column="3" Margin="5" TextAlignment="Center" VerticalContentAlignment="Center"/>
+
+            <Label Content="Város" Grid.Row="5" Grid.Column="1"/>
+            <TextBox x:Name="tbVaros" Grid.Row="5" Grid.Column="3" Margin="5" TextAlignment="Center" VerticalContentAlignment="Center"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4">
+                <Button x:Name="btRogzit" Content="Módosított adatpár rögzítése" Click="btRogzit_Click" Margin="5,0,5,0" Padding="10,0"/>
+                <Button x:Name="btMent" Content="Mentés" Click="btMent_Click" Margin="5,0" Padding="10,0"/>
+                <Button x:Name="btVissza" Content="Vissza" Click="btVissza_Click" Margin="5,0" Padding="10,0"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
 </Window>
