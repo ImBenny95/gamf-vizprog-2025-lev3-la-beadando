@@ -67,7 +67,7 @@
 
             <Label Content="Város" Grid.Row="5" Grid.Column="1"/>
             <TextBox x:Name="tbVaros" Grid.Row="5" Grid.Column="3" Margin="5" TextAlignment="Center" VerticalContentAlignment="Center"/>
-
+            
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4">
                 <Button x:Name="btRogzit" Content="Módosított adatpár rögzítése" Click="btRogzit_Click" Margin="5,0,5,0" Padding="10,0"/>
                 <Button x:Name="btMent" Content="Mentés" Click="btMent_Click" Margin="5,0" Padding="10,0"/>
