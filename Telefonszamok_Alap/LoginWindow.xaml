@@ -1,0 +1,24 @@
+﻿<Window x:Class="Telefonszamok_Alap.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bejelentkezés" Height="200" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0 0 0 10">
+            <Label Content="Felhasználónév:"/>
+            <TextBox x:Name="tbFelhasznalo"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="0 0 0 10">
+            <Label Content="Jelszó:"/>
+            <PasswordBox x:Name="pbJelszo"/>
+        </StackPanel>
+
+        <Button Grid.Row="2" Content="Bejelentkezés" Click="Bejelentkezes_Click" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>

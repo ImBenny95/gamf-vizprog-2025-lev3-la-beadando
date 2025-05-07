@@ -22,6 +22,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Models;
+using Telefonszamok_Alap.Models;
 
 namespace cnTelefonkonyv
 {
@@ -72,6 +73,8 @@ namespace cnTelefonkonyv
             get;
             set;
         }
+        //public object Felhasznalo { get; internal set; }
+        public virtual DbSet<Felhasznalo> Felhasznalok { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
