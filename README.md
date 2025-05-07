@@ -14,7 +14,7 @@ az SQL UPDATE mappában lévő scripteket!
 2_create_users.sql - Hozzáadja a fentebb olvasható teszt felhasználókat.
 
 
-Changelog
+Changelog:
 
 **Alpha**
 
