@@ -4,6 +4,12 @@ Alapértelmezett bejelentkezési lehetőségek:
 admin - admin123
 teszt - jelszo
 
+Annak aki az 1.0a verziót használta eddig és nem szeretné a komplett adatbázisát cserélni futtassa sorban
+az SQL UPDATE mappában lévő scripteket!
+
+1_create_users_table.sql - Létrehozza az adatbázist a felhasználók számára.
+2_create_users.sql - Hozzáadja a fentebb olvasható teszt felhasználókat.
+
 
 Changelog
 
